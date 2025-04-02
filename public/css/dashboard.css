@@ -1,0 +1,412 @@
+/* Dashboard.css */
+
+/* Global Styles */
+:root {
+    --primary-color: #d39f00;
+    --secondary-color: #ffe100;
+    --accent-color: #dea805;
+    --text-color: #f3f4f6;
+    --dark-bg: rgba(17, 24, 39, 0.85);
+    --glow-color: rgba(255, 200, 0, 0.616);
+}
+
+body {
+    font-family: 'Figtree', sans-serif;
+    background-image:  url('/images/box.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    color: var(--text-color);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling with improved spacing from navbar */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(255, 200, 0, 0.3);
+    border: 1px solid rgba(255, 200, 0, 0.2);
+    /* Add margin-top to create space between navbar and container */
+    margin-top: 2.5rem;
+}
+
+/* Page title */
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--glow-color),
+                 0 0 20px var(--glow-color);
+    position: relative;
+}
+
+.page-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Winner box styling with improved colors */
+.winner-box {
+    background: linear-gradient(135deg, rgba(211, 159, 0, 0.3) 0%, rgba(222, 168, 5, 0.3) 100%);
+    border: 2px solid var(--primary-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 20px rgba(255, 200, 0, 0.5);
+}
+
+.winner-box h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.winner-box p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+}
+
+/* Main layout adjustment */
+main {
+    padding-top: 1.5rem; /* Add padding to main content area */
+}
+
+/* Table styling */
+.leaderboard-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 
+        0 0 15px var(--glow-color),
+        0 0 30px var(--glow-color);
+}
+
+.leaderboard-table thead {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.leaderboard-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: black; /* Better contrast against yellow */
+}
+
+.leaderboard-table tbody tr {
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.leaderboard-table tbody tr:nth-child(even) {
+    background-color: rgba(55, 50, 31, 0.85);
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: rgba(212, 154, 6, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.leaderboard-table td {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(212, 178, 6, 0.2);
+    font-size: 1rem;
+    color: #f3f4f6;
+}
+
+.leaderboard-table tbody tr:first-child {
+    background: linear-gradient(90deg, rgba(212, 154, 6, 0.3) 0%, rgba(255, 225, 0, 0.3) 100%);
+}
+
+.leaderboard-table tbody tr:first-child td {
+    font-weight: 600;
+    color: white;
+}
+
+/* Navigation Styling - Matching your navigation.blade.php */
+nav {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid #ffbb00 !important;
+    box-shadow: 0 4px 6px -1px rgba(212, 157, 6, 0.1), 0 2px 4px -1px rgba(212, 157, 6, 0.06) !important;
+    position: relative; /* Add position for better layout control */
+    z-index: 10; /* Ensure navbar stays above other content */
+}
+
+
+/* Ensure navbar flex alignment */
+.navbar .flex {
+    align-items: center;
+}
+/* Adjust logo size */
+
+
+
+
+.text-cyan-400 {
+    color: #eebb22 !important;
+}
+
+/* Override for dropdown menu */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border: 1px solid var(--primary-color) !important;
+    box-shadow: 0 0 15px rgba(212, 140, 6, 0.3) !important;
+}
+
+/* Override for dropdown links */
+.dropdown-link:hover {
+    background-color: rgba(240, 213, 7, 0.2) !important;
+}
+
+/* Application logo glow effect */
+.fill-current.text-cyan-400 {
+    filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.6));
+}
+
+/* Navigation link hover effects */
+.hover\:text-white:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Button hover effects */
+.hover\:bg-cyan-500:hover {
+    box-shadow: 0 0 10px rgba(212, 157, 6, 0.8) !important;
+}
+
+/* Active navigation link */
+.border-cyan-400 {
+    border-color: #eee022 !important;
+    box-shadow: 0 0 10px rgba(238, 224, 34, 0.5);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 200, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 200, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 200, 0, 0);
+    }
+}
+
+/* Additional styling for buttons if needed */
+.button {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: black; /* Better contrast */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+}
+
+/* Tailwind specific color overrides */
+.bg-black {
+    background-color: #000 !important;
+}
+
+.border-cyan-500 {
+    border-color: #ffbb00 !important; /* Updated to match gold theme */
+}
+
+/* Dropdown menu styling - for Tailwind's dropdowns */
+div[x-data] [x-transition\:enter] {
+    animation: dropdownEnter 0.2s ease-out;
+}
+
+@keyframes dropdownEnter {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+/* Ensure logout button is visible in mobile navigation */
+@media (max-width: 800px) {
+    /* Your existing logout-button styles */
+    .logout-button {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: black;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    }
+
+    .logout-button:hover {
+        box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+        transform: translateY(-2px);
+    }
+
+    /* ADD THIS: Login button styles for mobile */
+    .login-button {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: black;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    }
+
+    .login-button:hover {
+        box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+        transform: translateY(-2px);
+    }
+
+    /* Ensure the dropdown menu is fully visible */
+    /* .dropdown-menu {
+        position: relative;
+        display: block !important;
+    }
+    .hidden.sm\:flex {
+        display: none !important;
+    }
+    
+    .sm\:hidden {
+        display: block !important;
+    } */
+    .dashboard-button {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        font-weight: 600;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+    }
+
+    .dashboard-button:hover {
+        box-shadow: 0 0 15px rgba(0, 150, 255, 0.7);
+        transform: translateY(-2px);
+    }
+}
+/* User name display for desktop */
+.user-name-display {
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-shadow: 0 0 8px var(--glow-color);
+}
+
+/* Desktop logout button styling */
+.logout-btn-desktop {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: black;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+.logout-btn-desktop:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+}
+
+.logout-btn-desktop:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* Mobile logout button styling */
+.logout-btn-mobile {
+    display: block;
+    width: 90%;
+    margin: 0.75rem auto;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: black;
+    font-weight: 600;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 200, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    animation: pulse 2s infinite;
+}
+
+.logout-btn-mobile:hover {
+    box-shadow: 0 0 15px rgba(255, 200, 0, 0.7);
+}
+
+/* Responsive adjustments */
